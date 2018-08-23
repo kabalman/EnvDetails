@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Nebula DNS Importer</title>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <script src="/static/bootstrap/jquery.min.js"></script>
+        <script src="/static/bootstrap/bootstrap.min.js"></script>
+        
+
+        <style>
+            .nav {
+                padding-top: 7px;
+            }
+            .navbar-default .navbar-nav>li>a {
+                color: white !important;
+            }
+            
+            .navbar .navbar-nav>.open>a, 
+            .navbar .navbar-nav>.open>a:focus, 
+            .navbar .navbar-nav>.open>a:hover {
+                background-color: black !important;
+                color: white;
+            }
+        </style>
+        
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="background-color:#000000;height:64px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/profile" style="padding: 0px;">
+                        <img src="/static/assets/dxc.png" alt="logo" height="70" style="padding:8px;padding-top:1px">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DNS Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/dns/add">Add a New DNS Server</a></li>
+                            <li><a href="/dns/list">List DNS Servers</a></li>
+                            <li><a href="/dns/export">Export DNS Servers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">NTP Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ntp/add">Add a New NTP Server</a></li>
+                            <li><a href="/ntp/list">List NTP Servers</a></li>
+                            <li><a href="/ntp/export">Export NTP Servers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Domain Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/domain/add">Add a New Customer Domain</a></li>
+                            <li><a href="/domain/list">List Customer Domains</a></li>
+                            <li><a href="/domain/export">Export Customer Domains</a></li>
+                        </ul>
+                    </li>
+                </ul>					
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="btn btn-outline-danger my-2 my-sm-0" role="button">Logout</a></li>
+                </ul>			
+            </div>
+        </nav>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %} 
+        {% if messages %}
+        <!--   <ul class=flashes> -->
+            {% for message in messages %}
+            <div class="container">
+                <div class="alert alert-success" role="alert">
+                <p class="text-center"> <strong>Success:</strong> {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+        <!--    </ul> -->
+        {% endif %} {% endwith %}
+        <!--Alert for a error-->
+        {% if error %}
+            <div class="container">
+                <div class="alert alert-danger" role="alert">
+                <p class="text-center"><strong>Error:</strong> {{ error }}
+                </div>
+            </div>
+        {% endif %}
+        {% block content%}
+
+        {% endblock %} 
+		<link rel="stylesheet" type ="text/css" href="/static/bootstrap/bootstrap.min.css">
+    </body>
+</html>

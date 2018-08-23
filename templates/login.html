@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nebula DNS Importer</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="/static/bootstrap/jquery.min.js"></script>
+    <script src="/static/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="background-color:#000000;height:64px;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/profile" style="padding: 0px;">
+                    <img src="/static/assets/dxc.png" alt="logo" height="70" style="padding:8px;padding-top:1px">
+                </a>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+    {% block content %}
+    <div class="container login-page-form">
+    <form id="login-form" action="/login" method="post">
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" id="email" class="form-control" name="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" class="form-control" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    {% endblock %}
+    <link rel="stylesheet" type ="text/css" href="/static/bootstrap/bootstrap.min.css">
+</body>
+</html>

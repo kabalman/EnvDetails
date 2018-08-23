@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="container list-page-form">
+<h1 class="heading-1 text-center">Current Domain Entries Available</h1>
+<table class="table" style="width:100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>Customer</th>
+            <th>Environment</th>
+            <th>Domain</th>
+        </tr>
+    </thead>
+    {% for entry in entries %}
+        <tr>
+            <td>{{ entry.customer }}</td>
+            <td>{{ entry.environment }}</td>
+            <td>{{ entry.domain }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

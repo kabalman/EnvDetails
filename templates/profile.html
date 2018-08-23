@@ -1,0 +1,13 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="jumbotron profile">
+    <h1 class="display-4">Hello {{ email }}</h1>
+    <hr class="my-4">
+    <p>This is a tool that allows you to:</p>
+    <ul>
+      <li>Add, remove and view the DNS servers for your customer environments</li>
+      <li>Add, remove and view the NTP servers for your customer environments</li>
+      <li>Add, remove and view the customer domains for your customer environments</li>
+    </ul>
+</div>
+{% endblock %}
